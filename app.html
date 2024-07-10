@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+
+		<link rel="stylesheet" href="estilo.css" />
+		<script src="jogo.js"></script>
+
+	</head>
+	<body onresize="ajustaTamanhoPalcoJogo()">
+
+		<div class="painel">
+			<div class="vidas">
+				<img id="v1" src="imagens/coracao_cheio.png" />
+				<img id="v2" src="imagens/coracao_cheio.png" />
+				<img id="v3" src="imagens/coracao_cheio.png" />
+			</div>
+
+			<div class="cronometro">
+				Tempo restante: <span id="cronometro"></span>
+			</div>
+		</div>
+
+		<script>
+			document.getElementById('cronometro').innerHTML = tempo //cronometro inicia com a variável global tempo estabelecida, pra só depois atualizar com a variável cronometro
+
+			posicaoRandomica() //chamando a função após a renderização do elemento html
+
+			var criaMosquito = setInterval(function(){
+				posicaoRandomica()
+			}, criaMosquitoTempo) //Todas as funções e variáveis globais presentes no arquivo jogo.js já foi carregada na memória e está disponível nesse ponto do código. Logo podemos chamar as funções e utilizar as variáveis para controle das requisições. Esse é o ponto do código que temos os elementos html renderizados e podemos manipular a página utilizando as funcionalidades criadas.
+		</script>
+	</body>
+</html>
